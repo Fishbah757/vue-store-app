@@ -1,13 +1,40 @@
 <template>
     <div>
-        <ItemCard @removeOne="removeOne" @removeAll="removeAll" from="Cart" :name="item.name" :price="item.price" :image="item.image" />
-        <div v-if="isEditing" class="ui small input">
-            <input :placeholder="item.count" v-model="newCount" type="number" />
-            <button @click="sendForm(item, newCount)" class="ui green button">Submit</button>
+        <ItemCard
+          @removeOne="removeOne"
+          @removeAll="removeAll"
+          from="Cart"
+          :name="item.name"
+          :price="item.price"
+          :image="item.image"
+        />
+        <div 
+          v-if="isEditing" 
+          class="ui small input"
+        >
+          <input 
+            :placeholder="item.count" 
+            v-model="newCount" 
+            type="number" 
+          />
+          <button 
+            @click="sendForm(item, newCount)" 
+            class="ui green button"
+          >
+            Submit
+          </button>
         </div>
-        <div v-if="!isEditing" class="change-count-btn" @click="openForm(item)">
-            <h2 class="count-btn">{{item.count}} {{item.count === 1 ? 'item' : 'items'}}</h2>
-            <p>(click to change)</p>
+        <div 
+          v-if="!isEditing" 
+          class="change-count-btn" 
+          @click="openForm(item)"
+        >
+          <h2 class="count-btn">
+            {{item.count}} {{item.count === 1 ? 'item' : 'items'}}
+          </h2>
+          <p>
+            (click to change)
+          </p>
         </div>
     </div>
 </template>

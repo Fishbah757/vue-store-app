@@ -3,12 +3,30 @@
         <Menu :link="true" />
         <h1 class="ui centered header">You are in your own Cart!</h1>
         <ul class="products-list">
-            <li v-for="item in cartItems" :key='item.name'>
-                <CartItem @removeAll="removeAll" @removeOne="removeOne" @catchForm="catchForm" :item="item" />
-            </li>
+          <li 
+            v-for="item in cartItems" 
+            :key='item.name'
+          >
+            <CartItem 
+              @removeAll="removeAll" 
+              @removeOne="removeOne" 
+              @catchForm="catchForm" 
+              :item="item" 
+            />
+          </li>
         </ul>
-        <h2 v-if="isEmpty" class="ui centered header diffcolor">Total price: ${{ totalPrice }}</h2>
-        <h2 v-else class="ui centered header diffcolor">Your Cart is empty!</h2>
+        <h2 
+          v-if="isEmpty"
+          class="ui centered header diffcolor"
+        >
+          Total price: ${{ totalPrice }}
+        </h2>
+        <h2 
+          v-else 
+          class="ui centered header diffcolor"
+        >
+          Your Cart is empty!
+        </h2>
     </div>
 </template>
 

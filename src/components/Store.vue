@@ -1,11 +1,24 @@
 <template>
   <div>
     <Menu :link="false" />
-    <h1 class="ui centered header">Welcome to our Store!</h1>
-    <h3 class="ui centered header">In your cart {{ countInCart }} item(s)</h3>
+    <h1 class="ui centered header">
+      Welcome to our Store!
+    </h1>
+    <h3 class="ui centered header">
+      In your cart {{ countInCart }} item(s)
+    </h3>
     <ul class="products-list">
-      <li v-for="item in items" :key="item.name">
-        <ItemCard @addToCart="addToCart" from="Store" :name="item.name" :price="item.price" :image="item.image" />
+      <li 
+        v-for="item in items" 
+        :key="item.name"
+      >
+        <ItemCard 
+          @addToCart="addToCart" 
+          from="Store" 
+          :name="item.name" 
+          :price="item.price" 
+          :image="item.image" 
+        />
       </li>
     </ul>
   </div>

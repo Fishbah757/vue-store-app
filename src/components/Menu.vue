@@ -1,13 +1,21 @@
 <template>
     <div class="ui fluid two item top massive fixed menu">
-      <router-link v-if="link" to="/" class="item left home-link">
-          <i class="home icon"></i>
-          Home
+      <router-link 
+        v-if="link" 
+        to="/" 
+        class="item left home-link"
+      >
+        <i class="home icon"></i>
+        Home
       </router-link>
-      <router-link v-if="!link" to="/cart" class="item right cart">
-          <i class="shop icon"></i>
-          Go to Cart
-        </router-link>
+      <router-link 
+        v-if="!link" 
+        to="/cart" 
+        class="item right cart"
+      >
+        <i class="shop icon"></i>
+        Go to Cart
+      </router-link>
     </div>
 </template>
 

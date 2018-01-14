@@ -4,20 +4,41 @@
             <img :src="image">
         </div>
         <div class="content">
-            <div class="header">{{ name }}</div>
+            <div class="header">
+                {{ name }}
+            </div>
             <div class="description">
                 Price: ${{ price }}
             </div>
         </div>
-        <div v-if="from === 'Store'" @click="addToCart(name, price, image)" class="ui bottom attached red button">
-            <p>Add to shopping cart</p>
+        <div 
+            v-if="from === 'Store'" 
+            @click="addToCart(name, price, image)" 
+            class="ui bottom attached red button"
+        >
+            <p>
+                Add to shopping cart
+            </p>
         </div>
-        <div v-if="from !== 'Store'" class="ui two buttons">
-            <div @click="removeOne(name)" class="ui bottom left attached red button half">
-                <p class="small-size">Delete from cart 1 item</p>
+        <div 
+            v-if="from !== 'Store'" 
+            class="ui two buttons"
+        >
+            <div 
+                @click="removeOne(name)" 
+                class="ui bottom left attached red button half"
+            >
+                <p class="small-size">
+                    Delete from cart 1 item
+                </p>
             </div>
-            <div @click="removeAll(name)" class="ui bottom right attached red button half">
-                <p class="small-size">Delete from cart all this items</p>
+            <div 
+                @click="removeAll(name)" 
+                class="ui bottom right attached red button half"
+            >
+                <p class="small-size">
+                    Delete from cart all this items
+                </p>
             </div>
         </div>
     </div>
